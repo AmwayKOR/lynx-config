@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
 
 <!--  
  This is the Solr schema file. This file should be named "schema.xml" and
@@ -228,7 +244,7 @@
 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
 				<filter class="solr.WordDelimiterFilterFactory"
 					generateWordParts="1" generateNumberParts="1" catenateWords="1"
-					catenateNumbers="1" catenateAll="0" splitOnCaseChange="1" preserveOriginal="1"/>
+					catenateNumbers="1" catenateAll="0" splitOnNumerics="0" splitOnCaseChange="1" preserveOriginal="1"/>
 				<filter class="solr.LowerCaseFilterFactory" />
 			</analyzer>
 		</fieldType>
@@ -291,6 +307,19 @@
 			</analyzer>
 		</fieldType>
 
+		<fieldType name="text_spell_ms" class="solr.TextField" positionIncrementGap="100">
+			<analyzer>
+				<tokenizer class="solr.StandardTokenizerFactory" />
+				<filter class="solr.IndonesianStemFilterFactory" />
+				<filter class="solr.ManagedStopFilterFactory" managed="ms" />
+				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
+				<filter class="solr.ManagedSynonymFilterFactory" managed="ms" />
+				<filter class="solr.LowerCaseFilterFactory" />
+				<filter class="solr.TrimFilterFactory" />
+				<filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+			</analyzer>
+		</fieldType>
+
 		<fieldType name="text_spell_fr" class="solr.TextField" positionIncrementGap="100">
 			<analyzer>
 				<tokenizer class="solr.StandardTokenizerFactory" />
@@ -334,6 +363,62 @@
 			</analyzer>
 		</fieldType>
 
+		<fieldType name="text_spell_sv" class="solr.TextField" positionIncrementGap="100">
+			<analyzer>
+				<tokenizer class="solr.StandardTokenizerFactory" />
+				<filter class="solr.SwedishLightStemFilterFactory" />
+				<filter class="solr.StopFilterFactory" words="lang/stopwords_sv.txt" ignoreCase="true" />
+				<filter class="solr.ManagedStopFilterFactory" managed="sv" />
+				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
+				<filter class="solr.ManagedSynonymFilterFactory" managed="sv" />
+				<filter class="solr.LowerCaseFilterFactory" />
+				<filter class="solr.TrimFilterFactory" />
+				<filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+			</analyzer>
+		</fieldType>
+
+		<fieldType name="text_spell_da" class="solr.TextField" positionIncrementGap="100">
+			<analyzer>
+				<tokenizer class="solr.StandardTokenizerFactory" />
+				<filter class="solr.SnowballPorterFilterFactory" language="Danish" />
+				<filter class="solr.StopFilterFactory" words="lang/stopwords_da.txt" ignoreCase="true" />
+				<filter class="solr.ManagedStopFilterFactory" managed="da" />
+				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
+				<filter class="solr.ManagedSynonymFilterFactory" managed="da" />
+				<filter class="solr.LowerCaseFilterFactory" />
+				<filter class="solr.TrimFilterFactory" />
+				<filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+			</analyzer>
+		</fieldType>
+
+		<fieldType name="text_spell_fi" class="solr.TextField" positionIncrementGap="100">
+			<analyzer>
+				<tokenizer class="solr.StandardTokenizerFactory" />
+				<filter class="solr.FinnishLightStemFilterFactory" />
+				<filter class="solr.StopFilterFactory" words="lang/stopwords_fi.txt" ignoreCase="true" />
+				<filter class="solr.ManagedStopFilterFactory" managed="fi" />
+				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
+				<filter class="solr.ManagedSynonymFilterFactory" managed="fi" />
+				<filter class="solr.LowerCaseFilterFactory" />
+				<filter class="solr.TrimFilterFactory" />
+				<filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+			</analyzer>
+		</fieldType>
+
+		<fieldType name="text_spell_no" class="solr.TextField" positionIncrementGap="100">
+			<analyzer>
+				<tokenizer class="solr.StandardTokenizerFactory" />
+				<filter class="solr.NorwegianLightStemFilterFactory" />
+				<filter class="solr.StopFilterFactory" words="lang/stopwords_no.txt" ignoreCase="true" />
+				<filter class="solr.ManagedStopFilterFactory" managed="no" />
+				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
+				<filter class="solr.ManagedSynonymFilterFactory" managed="no" />
+				<filter class="solr.LowerCaseFilterFactory" />
+				<filter class="solr.TrimFilterFactory" />
+				<filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+			</analyzer>
+		</fieldType>
+
 		<fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
 			<analyzer>
 				<tokenizer class="solr.StandardTokenizerFactory" />
@@ -343,7 +428,7 @@
 				<filter class="solr.ManagedSynonymFilterFactory" managed="en" />
 				<filter class="solr.WordDelimiterFilterFactory"  preserveOriginal="1"
 					generateWordParts="1" generateNumberParts="1" catenateWords="1"
-					catenateNumbers="1" catenateAll="0" splitOnCaseChange="1" />
+					catenateNumbers="1" catenateAll="0" splitOnCaseChange="1" splitOnNumerics="0"/>
 				<filter class="solr.LowerCaseFilterFactory" />
 				<filter class="solr.ASCIIFoldingFilterFactory" />
 				<filter class="solr.SnowballPorterFilterFactory" language="English" />
@@ -363,6 +448,21 @@
 				<filter class="solr.LowerCaseFilterFactory" />
 				<filter class="solr.ASCIIFoldingFilterFactory" />
 				<filter class="solr.SnowballPorterFilterFactory" language="German2" />
+			</analyzer>
+		</fieldType>
+
+		<fieldType name="text_ms" class="solr.TextField" positionIncrementGap="100">
+			<analyzer>
+				<tokenizer class="solr.StandardTokenizerFactory" />
+				<filter class="solr.StandardFilterFactory" />
+				<filter class="solr.LowerCaseFilterFactory" />
+				<filter class="solr.ManagedSynonymFilterFactory" managed="ms" />
+				<filter class="solr.WordDelimiterFilterFactory"
+					generateWordParts="1" generateNumberParts="1" catenateWords="1"
+					catenateNumbers="1" catenateAll="0" splitOnCaseChange="0" />
+				<filter class="solr.ManagedStopFilterFactory" managed="ms" />
+				<filter class="solr.ASCIIFoldingFilterFactory" />
+				<filter class="solr.IndonesianStemFilterFactory" stemDerivational="false" />
 			</analyzer>
 		</fieldType>
 
@@ -477,6 +577,70 @@
 			</analyzer>
 		</fieldType>
 
+		<fieldType name="text_sv" class="solr.TextField" positionIncrementGap="100">
+			<analyzer>
+				<tokenizer class="solr.StandardTokenizerFactory" />
+    	    	<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" />
+				<filter class="solr.ManagedStopFilterFactory" managed="it" />
+ 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
+				<filter class="solr.ManagedSynonymFilterFactory" managed="it" />
+				<filter class="solr.WordDelimiterFilterFactory" preserveOriginal="1"
+					generateWordParts="1" generateNumberParts="1" catenateWords="1"
+					catenateNumbers="1" catenateAll="0" splitOnCaseChange="1" />
+     			<filter class="solr.LowerCaseFilterFactory" />
+				<filter class="solr.ASCIIFoldingFilterFactory" />
+				<filter class="solr.SnowballPorterFilterFactory" language="Swedish"/>
+			</analyzer>
+		</fieldType>
+
+		<fieldType name="text_da" class="solr.TextField" positionIncrementGap="100">
+			<analyzer>
+				<tokenizer class="solr.StandardTokenizerFactory" />
+    	    	<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_da.txt" />
+				<filter class="solr.ManagedStopFilterFactory" managed="it" />
+ 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
+				<filter class="solr.ManagedSynonymFilterFactory" managed="it" />
+				<filter class="solr.WordDelimiterFilterFactory" preserveOriginal="1"
+					generateWordParts="1" generateNumberParts="1" catenateWords="1"
+					catenateNumbers="1" catenateAll="0" splitOnCaseChange="1" />
+     			<filter class="solr.LowerCaseFilterFactory" />
+				<filter class="solr.ASCIIFoldingFilterFactory" />
+				<filter class="solr.SnowballPorterFilterFactory" language="Danish"/>
+			</analyzer>
+		</fieldType>
+
+		<fieldType name="text_fi" class="solr.TextField" positionIncrementGap="100">
+			<analyzer>
+				<tokenizer class="solr.StandardTokenizerFactory" />
+    	    	<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_fi.txt" />
+				<filter class="solr.ManagedStopFilterFactory" managed="it" />
+ 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
+				<filter class="solr.ManagedSynonymFilterFactory" managed="it" />
+				<filter class="solr.WordDelimiterFilterFactory" preserveOriginal="1"
+					generateWordParts="1" generateNumberParts="1" catenateWords="1"
+					catenateNumbers="1" catenateAll="0" splitOnCaseChange="1" />
+     			<filter class="solr.LowerCaseFilterFactory" />
+				<filter class="solr.ASCIIFoldingFilterFactory" />
+				<filter class="solr.SnowballPorterFilterFactory" language="Finnish"/>
+			</analyzer>
+		</fieldType>
+
+		<fieldType name="text_no" class="solr.TextField" positionIncrementGap="100">
+			<analyzer>
+				<tokenizer class="solr.StandardTokenizerFactory" />
+    	    	<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_no.txt" />
+				<filter class="solr.ManagedStopFilterFactory" managed="it" />
+ 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
+				<filter class="solr.ManagedSynonymFilterFactory" managed="it" />
+				<filter class="solr.WordDelimiterFilterFactory" preserveOriginal="1"
+					generateWordParts="1" generateNumberParts="1" catenateWords="1"
+					catenateNumbers="1" catenateAll="0" splitOnCaseChange="1" />
+     			<filter class="solr.LowerCaseFilterFactory" />
+				<filter class="solr.ASCIIFoldingFilterFactory" />
+				<filter class="solr.SnowballPorterFilterFactory" language="Norwegian"/>
+			</analyzer>
+		</fieldType>
+
 		<fieldType name="sortabletext" class="solr.TextField" sortMissingLast="true" omitNorms="true">
       		<analyzer>
         		<!-- KeywordTokenizer does no actual tokenizing, so the entire
@@ -554,12 +718,17 @@
         
         <field name="autosuggest" type="text_spell" indexed="true" stored="true" multiValued="true" />
 		<field name="autosuggest_de" type="text_spell_de" indexed="true" stored="true" multiValued="true" />
+		<field name="autosuggest_ms" type="text_spell_ms" indexed="true" stored="true" multiValued="true" />
 		<field name="autosuggest_en" type="text_spell_en" indexed="true" stored="true" multiValued="true" />
 		<field name="autosuggest_fr" type="text_spell_fr" indexed="true" stored="true" multiValued="true" />
 		<field name="autosuggest_ja" type="text_spell" indexed="true" stored="true" multiValued="true" />
 		<field name="autosuggest_zh" type="text_spell" indexed="true" stored="true" multiValued="true" />
 		<field name="autosuggest_pt" type="text_spell_pt" indexed="true" stored="true" multiValued="true" />
 		<field name="autosuggest_it" type="text_spell_it" indexed="true" stored="true" multiValued="true" />
+		<field name="autosuggest_sv" type="text_spell_sv" indexed="true" stored="true" multiValued="true" />
+		<field name="autosuggest_da" type="text_spell_da" indexed="true" stored="true" multiValued="true" />
+		<field name="autosuggest_fi" type="text_spell_fi" indexed="true" stored="true" multiValued="true" />
+		<field name="autosuggest_no" type="text_spell_no" indexed="true" stored="true" multiValued="true" />
 
 		<copyField source="autosuggest" dest="autosuggest_de" />
 		<copyField source="autosuggest" dest="autosuggest_en" />
@@ -568,16 +737,26 @@
 		<copyField source="autosuggest" dest="autosuggest_zh" />
 		<copyField source="autosuggest" dest="autosuggest_pt" />
 		<copyField source="autosuggest" dest="autosuggest_it" />
+		<copyField source="autosuggest" dest="autosuggest_sv" />
+		<copyField source="autosuggest" dest="autosuggest_da" />
+		<copyField source="autosuggest" dest="autosuggest_fi" />
+		<copyField source="autosuggest" dest="autosuggest_no" />
+		<copyField source="autosuggest" dest="autosuggest_ms" />
 
 		<field name="spellcheck" type="text_spell" indexed="true" stored="true" multiValued="true" />
 		<field name="spellcheck_de" type="text_spell_de" indexed="true" stored="true" multiValued="true" />
+		<field name="spellcheck_ms" type="text_spell_ms" indexed="true" stored="true" multiValued="true" />
 		<field name="spellcheck_en" type="text_spell_en" indexed="true" stored="true" multiValued="true" />
 		<field name="spellcheck_fr" type="text_spell_fr" indexed="true" stored="true" multiValued="true" />
 		<field name="spellcheck_ja" type="text_spell" indexed="true" stored="true" multiValued="true" />
 		<field name="spellcheck_zh" type="text_spell" indexed="true" stored="true" multiValued="true" />
 		<field name="spellcheck_pt" type="text_spell_pt" indexed="true" stored="true" multiValued="true" />
 		<field name="spellcheck_it" type="text_spell_it" indexed="true" stored="true" multiValued="true" />
-		
+		<field name="spellcheck_sv" type="text_spell_sv" indexed="true" stored="true" multiValued="true" />
+		<field name="spellcheck_da" type="text_spell_da" indexed="true" stored="true" multiValued="true" />
+		<field name="spellcheck_fi" type="text_spell_fi" indexed="true" stored="true" multiValued="true" />
+		<field name="spellcheck_no" type="text_spell_no" indexed="true" stored="true" multiValued="true" />
+
 		<copyField source="spellcheck" dest="spellcheck_de" />
 		<copyField source="spellcheck" dest="spellcheck_en" />
 		<copyField source="spellcheck" dest="spellcheck_fr" />
@@ -585,7 +764,12 @@
 		<copyField source="spellcheck" dest="spellcheck_zh" />
 		<copyField source="spellcheck" dest="spellcheck_pt" />
 		<copyField source="spellcheck" dest="spellcheck_it" />
-				
+		<copyField source="spellcheck" dest="spellcheck_sv" />
+		<copyField source="spellcheck" dest="spellcheck_da" />
+		<copyField source="spellcheck" dest="spellcheck_fi" />
+		<copyField source="spellcheck" dest="spellcheck_no" />
+		<copyField source="spellcheck" dest="spellcheck_ms" />
+
 		<field name="fulltext_de" type="text_de" indexed="true" stored="false" multiValued="true" />
 		<field name="fulltext_en" type="text_en" indexed="true" stored="false" multiValued="true" />
 		<field name="fulltext_fr" type="text_fr" indexed="true" stored="false" multiValued="true" />
@@ -593,7 +777,13 @@
 		<field name="fulltext_zh" type="text_zh" indexed="true" stored="false" multiValued="true" />
 		<field name="fulltext_pt" type="text_pt" indexed="true" stored="false" multiValued="true" />
 		<field name="fulltext_it" type="text_it" indexed="true" stored="false" multiValued="true" />
-		
+		<field name="fulltext_sv" type="text_sv" indexed="true" stored="false" multiValued="true" />
+		<field name="fulltext_da" type="text_da" indexed="true" stored="false" multiValued="true" />
+		<field name="fulltext_fi" type="text_fi" indexed="true" stored="false" multiValued="true" />
+		<field name="fulltext_no" type="text_no" indexed="true" stored="false" multiValued="true" />
+		<field name="fulltext_ms" type="text_ms" indexed="true" stored="false" multiValued="true" />
+
+
 		<copyField source="*_text_de" dest="fulltext_de" />
 		<copyField source="*_text_en" dest="fulltext_en" />
 		<copyField source="*_text_fr" dest="fulltext_fr" />
@@ -601,13 +791,21 @@
 		<copyField source="*_text_zh" dest="fulltext_zh" />
 		<copyField source="*_text_pt" dest="fulltext_pt" />
 		<copyField source="*_text_it" dest="fulltext_it" />
-	
+		<copyField source="*_text_sv" dest="fulltext_sv" />
+		<copyField source="*_text_da" dest="fulltext_da" />
+		<copyField source="*_text_fi" dest="fulltext_fi" />
+		<copyField source="*_text_no" dest="fulltext_no" />
+		<copyField source="*_text_ms" dest="fulltext_ms" />
+
 		<dynamicField name="*_path" type="path" indexed="true" stored="true" />
 		<dynamicField name="*_path_mv" type="path" indexed="true" stored="true"  multiValued="true"/>
 
 		<dynamicField name="*_text_de" type="text_de" indexed="true" stored="true" />
 		<dynamicField name="*_text_de_mv" type="text_de" indexed="true" stored="true" multiValued="true"/>
 			
+		<dynamicField name="*_text_ms" type="text_ms" indexed="true" stored="true" />
+		<dynamicField name="*_text_ms_mv" type="text_ms" indexed="true" stored="true" multiValued="true"/>
+		
 		<dynamicField name="*_text_en" type="text_en" indexed="true" stored="true" />
 		<dynamicField name="*_text_en_mv" type="text_en" indexed="true" stored="true" multiValued="true"/>
 
@@ -625,6 +823,18 @@
 
 		<dynamicField name="*_text_it" type="text_it" indexed="true" stored="true" />
 		<dynamicField name="*_text_it_mv" type="text_it" indexed="true" stored="true" multiValued="true"/>
+
+		<dynamicField name="*_text_sv" type="text_sv" indexed="true" stored="true" />
+		<dynamicField name="*_text_sv_mv" type="text_sv" indexed="true" stored="true" multiValued="true"/>
+
+		<dynamicField name="*_text_da" type="text_da" indexed="true" stored="true" />
+		<dynamicField name="*_text_da_mv" type="text_da" indexed="true" stored="true" multiValued="true"/>
+
+		<dynamicField name="*_text_fi" type="text_fi" indexed="true" stored="true" />
+		<dynamicField name="*_text_fi_mv" type="text_fi" indexed="true" stored="true" multiValued="true"/>
+
+		<dynamicField name="*_text_no" type="text_no" indexed="true" stored="true" />
+		<dynamicField name="*_text_no_mv" type="text_no" indexed="true" stored="true" multiValued="true"/>
 
 		<dynamicField name="*_int" type="int" indexed="true" stored="true" />
 		<dynamicField name="*_int_mv" type="int" indexed="true" stored="true" multiValued="true" />

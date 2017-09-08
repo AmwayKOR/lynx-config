@@ -12,6 +12,7 @@
     <extension name='amwayapaccockpits' />
     <extension name='amwayapacinitialdata' />
     <extension name='amwayapacfulfilmentprocess' />
+    <extension name='amwayapacstorefrontcomponents' />
     <extension name='amwayapacstorefront' />
     <extension name='amwaycommercewebservices' />
     <extension name='amwaycommercewebservicesaddon' />

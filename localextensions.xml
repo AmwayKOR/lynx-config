@@ -53,5 +53,7 @@
     <extension name='promotionengineatddtests' />
     <extension name='textfieldconfiguratortemplateatddtests' />
     <extension name='pcmbackofficesamplesaddon' />
+    <extension name='addonsupport' />
+    <extension name='amwayapacrecentlyvieweditemsaddon' />
   </extensions>
 </hybrisconfig>

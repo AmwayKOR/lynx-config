@@ -19,6 +19,7 @@
     <extension name='amwaycommercewebservicesaddon' />
     <extension name='amwayapaccore' />
     <extension name='amwayapacfacades' />
+    <extension name='amwayapacserviceability' />
     <extension name='liveeditaddon' />
     <!--<extension name='acceleratorwebservicesaddon' />-->
     <extension name='orderselfserviceaddon' />

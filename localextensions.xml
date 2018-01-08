@@ -56,6 +56,7 @@
     <extension name='pcmbackofficesamplesaddon' />
     <extension name='addonsupport' />
     <extension name='amwayapacrecentlyvieweditemsaddon' />
-	<extension name="amwayapaccmssmartedit"/>
+	<extension name="amwayapaccmssmartedit" />
+	<extension name="amwayapacmessagecenter" />
   </extensions>
 </hybrisconfig>

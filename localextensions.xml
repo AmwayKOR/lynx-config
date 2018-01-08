@@ -58,5 +58,6 @@
     <extension name='amwayapacrecentlyvieweditemsaddon' />
 	<extension name="amwayapaccmssmartedit" />
 	<extension name="amwayapacmessagecenter" />
+	<extension name="amwayapacdeliveryslot"/>
   </extensions>
 </hybrisconfig>

@@ -50,10 +50,10 @@
     <extension name='textfieldconfiguratortemplateaddon' />
     <extension name='assistedservicestorefront' />
     <extension name='assistedservicepromotionaddon' />
-    <extension name='assistedserviceatddtests' />
+<!--     <extension name='assistedserviceatddtests' />
     <extension name='promotionengineatddtests' />
     <extension name='textfieldconfiguratortemplateatddtests' />
-    <extension name='pcmbackofficesamplesaddon' />
+ -->    <extension name='pcmbackofficesamplesaddon' />
     <extension name='addonsupport' />
     <extension name='amwayapacrecentlyvieweditemsaddon' />
 	<extension name="amwayapaccmssmartedit" />

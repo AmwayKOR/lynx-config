@@ -59,5 +59,6 @@
 	<extension name="amwayapaccmssmartedit" />
 	<extension name="amwayapacmessagecenter" />
 	<extension name="amwayapacdeliveryslot"/>
+	<extension name="amwayapacextendedordering" />
   </extensions>
 </hybrisconfig>

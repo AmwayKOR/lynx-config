@@ -60,7 +60,5 @@
 	<extension name="amwayapacmessagecenter" />
 	<extension name="amwayapacdeliveryslot"/>
 	<extension name="amwayapacextendedordering" />
-	<extension name="amwayapaccoupon" />
-	<extension name="amwayapacbackoffice" />
   </extensions>
 </hybrisconfig>

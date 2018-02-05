@@ -10,6 +10,7 @@
 	<path dir="${HYBRIS_BIN_DIR}/custom/amwayapac/apaccore" />
 
 	<!-- Common extensions -->
+	<extension name='amwayapaccommercewebservicesaddon' />
 
 	</extensions>
 </hybrisconfig>

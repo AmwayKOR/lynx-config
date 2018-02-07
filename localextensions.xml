@@ -21,7 +21,6 @@
     <extension name='amwayapacfacades' />
     <extension name='amwayapacserviceability' />
     <extension name='liveeditaddon' />
-    <extension name='acceleratorwebservicesaddon' />
     <extension name='orderselfserviceaddon' />
     <extension name='customersupportbackoffice' />
     <extension name='customerticketingaddon' />

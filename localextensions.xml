@@ -1,7 +1,7 @@
 <hybrisconfig xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='../bin/platform/resources/schemas/extensions.xsd'>
   <extensions>
     <path dir='${HYBRIS_BIN_DIR}' autoload='false' />
-	<path dir='${HYBRIS_BIN_DIR}\custom\amwayapac\core' autoload='false' />
+	<path dir='${HYBRIS_BIN_DIR}/custom/amwayapac/core' autoload='false' />
     <extension name='mcc' />
     <extension name='adaptivesearchsolr' />
     <extension name='adaptivesearchbackoffice' />
@@ -62,6 +62,7 @@
 	<extension name="amwayapacextendedordering" />
 	<extension name="amwayapaccoupon" />
 	<extension name="amwayapacbackoffice" />
+  <extension name="tealiumiqaddon" />
 <!-- 	<extension name='amwayapaccommercewebservicesaddon' />
  -->  </extensions>
 </hybrisconfig>

@@ -21,7 +21,7 @@
     <extension name='amwayapacfacades' />
     <extension name='amwayapacserviceability' />
     <extension name='liveeditaddon' />
-    <!--<extension name='acceleratorwebservicesaddon' />-->
+    <extension name='acceleratorwebservicesaddon' />
     <extension name='orderselfserviceaddon' />
     <extension name='customersupportbackoffice' />
     <extension name='customerticketingaddon' />
@@ -50,10 +50,7 @@
     <extension name='textfieldconfiguratortemplateaddon' />
     <extension name='assistedservicestorefront' />
     <extension name='assistedservicepromotionaddon' />
-<!--     <extension name='assistedserviceatddtests' />
-    <extension name='promotionengineatddtests' />
-    <extension name='textfieldconfiguratortemplateatddtests' />
- -->    <extension name='pcmbackofficesamplesaddon' />
+    <extension name='pcmbackofficesamplesaddon' />
     <extension name='addonsupport' />
     <extension name='amwayapacrecentlyvieweditemsaddon' />
 <!-- 	<extension name="amwayapaccmssmartedit" /> -->
@@ -62,7 +59,6 @@
 	<extension name="amwayapacextendedordering" />
 	<extension name="amwayapaccoupon" />
 	<extension name="amwayapacbackoffice" />
-  <extension name="tealiumiqaddon" />
-<!-- 	<extension name='amwayapaccommercewebservicesaddon' />
- -->  </extensions>
+  	<extension name='amwayapaccommercewebservicesaddon' />
+  </extensions>
 </hybrisconfig>

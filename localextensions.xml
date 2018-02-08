@@ -59,5 +59,6 @@
 	<extension name="amwayapaccoupon" />
 	<extension name="amwayapacbackoffice" />
   	<extension name='amwayapaccommercewebservicesaddon' />
+  	<extension name="amwayapacauth" />
   </extensions>
 </hybrisconfig>

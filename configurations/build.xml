@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<project name="sync_to_hybris" basedir="." default="copy_config">  
+
+	<property name="HYBRIS_HOME" location="${basedir}/../../../.." />
+	<property name="HYBRIS_BIN_DIR" location="${HYBRIS_HOME}/bin" />
+    <property name="HYBRIS_CONFIG_DIR" location="${HYBRIS_HOME}/config" />
+
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+        <classpath>
+            <pathelement location="ant_lib/ant-contrib-1.0b3.jar" />
+        </classpath>
+    </taskdef>
+
+	<target name="copy_config">
+		<if>
+			<isset property="profile"/>
+			<then>
+				<echo message="Profile ${profile}"/>
+				<copy todir="${HYBRIS_CONFIG_DIR}" overwrite="true">
+					<fileset dir="${profile}">
+						<include name="**/**"/>
+					</fileset>
+				</copy>
+			</then>
+			<else>
+				<echo message="Profile local"/>
+                <copy todir="${HYBRIS_CONFIG_DIR}" overwrite="true">
+                    <fileset dir="local">
+                        <include name="**/**"/>
+                    </fileset>
+                </copy>
+				<echo message="---------------------------------------"/>
+				<echo message="Copy customize to hybris/bin"/>
+				<echo message="---------------------------------------"/>
+				<copy todir="${HYBRIS_BIN_DIR}" overwrite="true">
+					<fileset dir="${HYBRIS_CONFIG_DIR}/customize">
+						<include name="**/**"/>
+					</fileset>
+				</copy>
+			</else>
+		</if>
+    </target>
+</project>

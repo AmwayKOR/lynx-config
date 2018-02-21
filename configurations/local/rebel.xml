@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.zeroturnaround.com"
+  xsi:schemaLocation="http://www.zeroturnaround.com/alderaan/rebel-2_0.xsd">
+  <classpath>
+
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxasmpromotionaddon/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxasmpromotionaddon/resources"/>
+
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxasmstorefront/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxasmstorefront/resources"/>
+
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxbusinessfacades/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxbusinessfacades/resources"/>
+
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxbusinessservices/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxbusinessservices/resources"/>
+
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxcommercefacades/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxcommercefacades/resources"/>
+
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxcommercehub/web/webroot/WEB-INF/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxcommercehub/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxcommercehub/resources"/>
+
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxcommerceservices/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxcommerceservices/resources"/>
+
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxcore/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxcore/resources"/>
+
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxfacades/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxfacades/resources"/>
+
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxintegration/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxintegration/resources"/>
+
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxmagicintegration/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxmagicintegration/resources"/>
+
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxordermanagement/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxordermanagement/resources"/>
+
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxposwebservices/web/webroot/WEB-INF/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxposwebservices/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxposwebservices/resources"/>
+
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxstorefront/web/webroot/WEB-INF/classes"/>
+    <dir name="C:/OMS/Hybris/hybris/bin/custom/lynx/lynxstorefront/resources"/>
+
+  </classpath>
+</application>
